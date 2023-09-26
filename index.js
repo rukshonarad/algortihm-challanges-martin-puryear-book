@@ -63,3 +63,15 @@ const arrSum = (arr) => {
 console.log(arrSum([4, 5, 7, 9])); //12
 console.log(arrSum(["Hi", 5, 7, 9])); //HiHi4
 console.log(">>>>> 6 First plus length <<<<<");
+
+// 7 Fit the first value
+const fitArr = (arr) => {
+    if (arr[0] > arr.length) {
+        console.log("Too big");
+    } else if (arr[0] < arr.length) {
+        console.log("Too small");
+    } else {
+        console.log("Just right");
+    }
+};
+console.log(fitArr([4, 3, 6, 7]));
