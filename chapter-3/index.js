@@ -228,3 +228,55 @@ const removeRange = (arr, start, end) => {
 const array = [20, 30, 40, 50, 60, 70];
 removeRange(array, 2, 4);
 console.log(array);
+
+//  Intermediate Sums You will be given an array of numbers. After every tenth element, add an additional element containing the sum of those ten values. If the array does not end aligned evenly with ten elements, add one last sum that includes those last elements not yet been included in one of the earlier sums. Given the array [], change it to [1,2,1,2,1,2,1,2,1,2,15,1,2,1,2,6].
+
+const intermediateSums = (arr) => {
+    let sum = 0;
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        let num = arr[i];
+        sum += num;
+        result.push(num);
+        if ((i + 1) % 10 === 0 || i === arr.length - 1) {
+            result.push(sum);
+            sum = 0;
+        }
+    }
+    return result;
+};
+console.log(intermediateSums([1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2]));
+
+//  Double Trouble
+
+//  Create a function that changes a given array to list each original element twice, retaining original order. Convert [4,"Ulysses",42,false] to [4,4,"Ulysses","Ulysses",42,42,false,false].
+
+const doubleIt = (arr) => {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        const digits = arr[i];
+        result.push(digits, digits);
+    }
+    return result;
+};
+console.log(doubleIt([4, "Ulysses", 42, false]));
+
+// Zip It
+// Create a standalone function that accepts two arrays and combines their values sequentially into a new array, at alternating indices starting with first array. Extra values from either array should be included afterward. Given [1,2] and [10,20,30,40], return new array containing [1,10,2,20,30,40]. Second: combine the two arrays’ values into the first array, instead of into a new array. Much more fun!
+const combineTwoArray = (arr1, arr2) => {
+    const combinedArray = [];
+    const maxLength = (arr1.length, arr2.length);
+
+    for (let i = 0; i < maxLength; i++) {
+        if (i < arr1.length) {
+            combinedArray.push(arr1[i]);
+        }
+        if (i < arr2.length) {
+            combinedArray.push(arr2[i]);
+        }
+    }
+
+    return combinedArray;
+};
+
+console.log(combineTwoArray([1, 2], [10, 20, 30, 40]));
