@@ -106,3 +106,25 @@ console.log(romanNumerical(24));
 console.log(romanNumerical(4669));
 console.log(romanNumerical(466));
 console.log(romanNumerical(40));
+console.log("_-_-_-_-_-_-_-_-_-_-_-_");
+
+//  Is Word Alphabetical Nikki, a queen of gentle sarcasm, loves the word facetiously. Lance helpfully points out that it is the only known English word that contains all five vowels in alphabetical order, and it even has a ‘y’ on the end! Nikki takes a break from debugging to turn and give him an acid stare – indeed a look that was delivered arseniously. Given a string, return whether all contained letters are in alphabetical order.
+const isWordAlphabetical = (str) => {
+    for (let i = 0; i < str.length - 1; i++) {
+        if (str[i] > str[i + 1]) {
+            return str.split("").sort().join("");
+        }
+    }
+    return str;
+};
+console.log(isWordAlphabetical("facetiously"));
+console.log("_-_-_-_-_-_-_-_-_-_-_-_");
+
+//  D Gets Jiggy Write a function that accepts as a parameter a string containing someone’s name. Return a string containing the following oh-so-cool greeting: strip off the first letter of the name, capitalize this new word, and add " to the [first letter]!" Given "Dylan", return "YLAN to the D!"
+const getJiggyWrite = (str) => {
+    const firstLetter = str[0].toUpperCase();
+    const restOfName = str.slice(1).toUpperCase();
+    return `${restOfName} to the ${firstLetter}!`;
+};
+
+console.log(getJiggyWrite("Dylan"));
