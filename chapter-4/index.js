@@ -128,3 +128,33 @@ const getJiggyWrite = (str) => {
 };
 
 console.log(getJiggyWrite("Dylan"));
+
+//  Common Suffix Lance is writing his opus: Epitome, an epic tome of beat poetry. Always ready for a good rhyme, he constantly seeks words that end with the same letters. Write a function that, when given a word array, returns the largest suffix (word-end) common to all words in the array. For inputs ["deforestation", "citation", "conviction", "incarceration"], return "tion" (not all that creative a rhyming point). If it is ["nice", "ice", "baby"], return "", because that’s just … not.
+function largestCommonSuffix(words) {
+    if (words.length === 0) {
+        return "";
+    }
+    words.sort();
+
+    const firstWord = words[0];
+    const lastWord = words[words.length - 1];
+
+    let i = 0;
+    while (i < firstWord.length && firstWord[i] === lastWord[i]) {
+        i++;
+    }
+
+    const commonSuffix = firstWord.slice(i);
+
+    return commonSuffix;
+}
+
+console.log(largestCommonSuffix(["nice", "ice", "baby"]));
+console.log(
+    largestCommonSuffix([
+        "deforestation",
+        "citation",
+        "conviction",
+        "incarceration"
+    ])
+);
