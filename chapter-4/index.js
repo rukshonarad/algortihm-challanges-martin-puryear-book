@@ -174,3 +174,17 @@ const arr1 = ["abc", 3, "yo"];
 const arr2 = [42, "wassup", true];
 const zippedMap = zipArrays(arr2, arr1);
 console.log(zippedMap);
+
+// Associative arrays are also called hashes (we’ll learn why later). Build invertHash(assocArr) to convert hash keys to values, and values to keys. Example: given {"name": "Zaphod", "charm": "high", "morals": "dicey"}, return object {"Zaphod": "name", "high": "charm", "dicey": "morals"}.
+function invertHash(assocArr) {
+    const inverted = {};
+
+    for (const key in assocArr) {
+        const value = assocArr[key];
+        inverted[value] = key;
+    }
+
+    return inverted;
+}
+
+console.log(invertHash({ name: "Zaphod", charm: "high", morals: "dicey" }));
