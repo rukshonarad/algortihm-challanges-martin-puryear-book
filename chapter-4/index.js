@@ -207,3 +207,17 @@ console.log(
         album: "668: The Neighbor of the Beast"
     })
 );
+
+// String.trim() - remove whitespace (spaces, tabs, newlines) from both sides, and return a new string. Example: " \n  hello goodbye \t  ".trim() should return "hello goodbye".
+
+const trimBySpace = (str) => {
+    return str.trim();
+};
+console.log(trimBySpace(" \n  hello goodbye \t  "));
+
+//  String.search String.search(val) - search string for the given val (another string). Return the index position of the first match found (or -1 if not found).
+
+const stingSearch = (str, val) => {
+    return str.search(val);
+};
+console.log(stingSearch("hello", "o"));
